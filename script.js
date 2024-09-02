@@ -9,6 +9,8 @@
         v
     Show text as choice
 */
+let humanScore = 0;
+let computerScore = 0;
 
 choiceArray = ["Rock", "Paper", "Scissors"]
 
@@ -54,36 +56,74 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
         if (humanChoice === "rock" && computerChoice === "rock") {
             console.log("Tie!");
+            console.log(computerScore)
+            console.log(humanScore)
         } else if (humanChoice === "paper" && computerChoice === "paper") {
             console.log("Tie!");
+            console.log(computerScore)
+            console.log(humanScore)
         } else if (humanChoice === "scissors" && computerChoice === "scissors") {
             console.log("Tie!");
+            console.log(computerScore)
+            console.log(humanScore)
         } else if (humanChoice === "rock" && computerChoice === "scissors") {
+            humanScore++;
             console.log("You win!");
+            console.log(computerScore)
+            console.log(humanScore)
         } else if (humanChoice === "paper" && computerChoice === "rock") {
+            humanScore++;
             console.log("You win!");
+            console.log(computerScore)
+            console.log(humanScore)
         } else if (humanChoice === "scissors" && computerChoice === "paper") {
+            humanScore++;
             console.log("You win!");
+            console.log(computerScore)
+            console.log(humanScore)
         } else if (humanChoice === "rock" && computerChoice === "paper") {
             console.log("Computer win!");
+            computerScore++;
+            console.log(computerScore)
+            console.log(humanScore)
         } else if (humanChoice === "paper" && computerChoice === "scissors") {
+            computerScore++;
+            console.log(computerScore)
+            console.log(humanScore)
             console.log("Computer win!")
         } else if (humanChoice === "scissors" && computerChoice === "rock") {
+            computerScore++;
+            console.log(computerScore)
+            console.log(humanScore)
             console.log("Computer win!")
         } else {
             console.log("Error")
         }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+
 
 // make new function named 'playGame'
 function playGame() {
-    let computerScore = 0;
-    let humanScore = 0;
+    computerScore = 0;
+    humanScore = 0;
     for (let i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
+    }
+
+    if (computerScore < humanScore) {
+        console.log("You have Won");
+    }
+    else if (computerScore > humanScore) {
+        console.log("Computer has Won!");
+    }
+    else if (computerScore === humanScore) {
+        console.log("It is Draw");
+    }
+    else {
+        console.log("Error")
     }
 }
 
