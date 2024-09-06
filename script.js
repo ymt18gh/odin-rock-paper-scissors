@@ -21,8 +21,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-
-
 // make function named 'getHumanChoice'
 /*
     Steps:
@@ -100,8 +98,6 @@ function playRound(humanChoice, computerChoice) {
             console.log("Error")
         }
 }
-
-
 
 // make new function named 'playGame'
 function playGame() {
